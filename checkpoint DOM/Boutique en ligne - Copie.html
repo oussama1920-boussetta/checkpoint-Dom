@@ -1,0 +1,235 @@
+<DOCTYPE html>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title> CA MEGASTORE </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="CAMEGASTORE.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+            integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <nav class="navbar">
+            <div class="logocamegastore">
+                <img src="images/camegas.jpg" width="100px">
+            </div>
+            <ul class="listenav">
+                <a href="#APropos">
+                    <ol> A Propos</ol>
+                </a>
+                <a href="#Produit">
+                    <ol>Produit</ol>
+                </a>
+                <a href="#Contact">
+                    <ol>Contact</ol>
+                </a>
+            </ul>
+        </nav>
+
+        <header>
+            <section id="APropos">
+                <h1> A Propos:</h1>
+                <p><strong><em>BOUTIQUE CA</em></strong>:Vivez à fond votre passion La vente en ligne sur
+                    www.clubafricain.com, c'est l'assurance d'achats en toute sécurité, 24h/24, 7j/7 : Sécurité des
+                    paiements, Confidentialité des données, Livraison rapide par des partenaires de qualité reconnue,
+                    Service Clientèle à votre écoute et Qualité de la prestation aux meilleurs prix telles sont au moins
+                    5 bonnes raisons de vous laisser tenter.</p>
+                <br>
+                <p><strong><em>Mission</em></strong>: Acheter en ligne ou s’abonner en ligne est une façon de prouver
+                    son attachement et son identification au Club en tant que supporter inconditionnel.</p>
+            </section>
+
+
+        </header>
+        <main>
+
+            <section id="Produit">
+                <h1> Produit:</h1>
+
+
+
+                <div class="card">
+                    <img src="images/maillotzo15.jpg">
+
+                    <h4><b>Maillot 1</b></h4>
+                    <i class="fas fa-heart"></i>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Taille</button>
+                        <div class="dropdown-content">
+                            <ol>S</ol>
+                            <ol>M</ol>
+                            <ol>L</ol>
+                            <ol>XL</ol>
+
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <button class="plus"> + </button>
+                        <p class="quantite">0</p>
+                        <button class="moin"> - </button>
+                    </div>
+                    <div>
+                        <p class="prix"> 100</p>
+                    </div>
+
+                    <button class="del">Remove</button>
+
+
+
+                </div>
+                <div class="card">
+                    <img src="images/club.jpg" width="200px">
+
+                    <h4><b>Maillot 2</b></h4>
+                    <i class="fas fa-heart"></i>
+                    <div class="dropdown">
+                        <button class="dropbtn">Taille</button>
+                        <div class="dropdown-content">
+                            <ol>S</ol>
+                            <ol>M</ol>
+                            <ol>L</ol>
+                            <ol>XL</ol>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="plus"> + </button>
+                        <p class="quantite">0</p>
+                        <button class="moin"> - </button>
+                    </div>
+                    <div>
+                        <p class="prix"> 100</p>
+                    </div>
+
+                    <button class="del">Remove</button>
+
+
+                </div>
+                </div>
+                <div class="card">
+                    <img src="images/casquette.jpg" width="200px">
+
+                    <h4><b>Casquette</b></h4>
+                    <i class="fas fa-heart"></i>
+                    <div class="dropdown">
+                        <button class="dropbtn">Taille</button>
+                        <div class="dropdown-content">
+                            <ol>S</ol>
+                            <ol>M</ol>
+                            <ol>L</ol>
+                            <ol>XL</ol>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="plus"> + </button>
+                        <p class="quantite">0</p>
+                        <button class="moin"> - </button>
+                    </div>
+                    <div>
+                        <p class="prix"> 50</p>
+                    </div>
+                    <div>
+                        <span id="res"></span>
+                    </div>
+
+                    <button class="del">Remove</button>
+
+                </div>
+
+                <h1>
+                    TOTAL : <span id="all_res">0</span>
+                </h1>
+
+            </section>
+        </main>
+        <footer>
+            <section id="Contact">
+                <h1>Contact:</h1>
+            </section>
+        </footer>
+        <script>
+
+            //adding btns
+            var arrayBtnPlus = document.getElementsByClassName('plus')
+            for (let i = 0; i < arrayBtnPlus.length; i++) {
+
+                arrayBtnPlus[i].addEventListener("click", function () {
+                    arrayBtnPlus[i].nextElementSibling.innerHTML++;
+                    somme();
+                }
+
+                )
+            };
+
+            //moin btns
+            var arrayBtnmoin = document.getElementsByClassName('moin')
+            for (let i = 0; i < arrayBtnmoin.length; i++) {
+
+                arrayBtnmoin[i].addEventListener("click", function () {
+                    if (arrayBtnmoin[i].previousElementSibling.innerHTML > 0) {
+                        arrayBtnmoin[i].previousElementSibling.innerHTML--;
+                        somme()
+                    }
+
+                }
+
+                )
+            };
+
+
+            //delete
+
+            var arraybtnButtonDel = Array.from(document.getElementsByClassName('del'))
+            for (let i = 0; i < arraybtnButtonDel.length; i++) {
+
+
+
+                arraybtnButtonDel[i].addEventListener("click", function () {
+                    arraybtnButtonDel[i].parentNode.remove();
+                });
+
+
+
+
+
+            }
+            // coeur
+            var arraycoeur = document.getElementsByClassName('fa-heart')
+            for (let i = 0; i < arraycoeur.length; i++) {
+                arraycoeur[i].addEventListener("click",function(){
+                    if( arraycoeur[i].style.color=='red'){
+                        arraycoeur[i].style.color='black'
+                    }else{
+                        arraycoeur[i].style.color='red';
+                    }
+                   
+                }
+                ) }
+
+                //Total
+              
+                var arrayQuantite =document.getElementsByClassName('quantite')
+                var arrayPrix =document.getElementsByClassName('prix')
+                function somme() {
+                    var sum=0
+                    for(let i=0 ;i<arrayQuantite.length;i++){
+                        sum=sum+(arrayQuantite[i].innerHTML*arrayPrix[i].innerHTML )
+                    }
+                    document.getElementById("all_res").innerHTML  = sum
+                }
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+
+    </html>
